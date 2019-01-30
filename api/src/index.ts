@@ -16,7 +16,6 @@ db.authenticate()
   await Server.start();
 })();
 
-
 process.on('SIGINT', () => {
   logger.info('Stopping hapi server');
 

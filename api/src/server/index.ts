@@ -33,19 +33,18 @@ export class Server {
   }
 
   static async start(): Promise<Hapi.Server> {
-    console.log('here');
+
     try {
       await Server._instance.start();
-      console.log('here');
+
       logger.info('Server - Up and running!');
       logger.info(
           `Server endpoint: http://${process.env.HOST}:${process.env.PORT}`);
-      console.log('here1');
 
       return Server._instance;
 
     } catch (error) {
-      console.log(error);
+
       logger.info(`Server - There was something wrong: ${error}`);
 
       throw error;
