@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-select name="status" placeholder="Filter by Status" [formControl]="statusSelected">
+    <mat-option *ngFor="let status of statusList" [value]="status.value">{{status.label}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select name="due" placeholder="Filter by Due Date" [formControl]="dateSelected" multiple>
+    <mat-option *ngFor="let due of dateList" [value]="due.value">{{due.label}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-button (click)="filter()" >Filter results<mat-icon>filter_list</mat-icon></button>

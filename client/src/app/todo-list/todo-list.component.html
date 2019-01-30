@@ -1,0 +1,8 @@
+
+<app-todo-filter></app-todo-filter>
+
+<app-todo-new></app-todo-new>
+
+<ng-container *ngFor="let todo of todoService.collection">
+    <app-todo-item [item]="todo" *ngIf="!todo.isDeleted && !todo.isFiltered"></app-todo-item>
+</ng-container>
